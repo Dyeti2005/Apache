@@ -4,6 +4,6 @@ public:
 bala(int X, int Y);
 void mover();
 bool fuera();
-int X();
-int Y();
+int X(){return x;}
+int Y(){return y;}
 };

@@ -1,8 +1,6 @@
-#include "utils.h"
-
 #include "jugador.h"
-//#include "enemigo.h"
-
+#include "enemigo.h"
+#include "utils.h"
 #include "bala.h"
 
 #include <list>
@@ -57,9 +55,6 @@ gotoxy(x,y);
 printf("->");
 }
 
-int bala::X(){return x;}
-int bala::Y(){return y;}
-
 bool bala::fuera(){
   if(x == 64) return true;
   return false;
@@ -99,17 +94,7 @@ int main() {
 
     N.mover();
     
-    if(kbhit){
-
-    //char tecla = getch();
-
-    if(GetAsyncKeyState(0X20)){
-
-    B.push_back(new bala(N.X() + 15, N.Y() + 1));
-
-    }
-
-    }
+    if(GetAsyncKeyState(0X20)){B.push_back(new bala(N.X() + 15, N.Y() + 1));}
 
     for(it = B.begin(); it != B.end(); it++){
 
@@ -122,6 +107,6 @@ int main() {
     }
 
     }
-   Sleep(100);
+   Sleep(33);
   }
 }
